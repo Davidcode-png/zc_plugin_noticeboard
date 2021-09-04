@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CreateNoticeView, CommentReactionAPIView, AllNoticesView, CommentDeleteAPIView, NoticeDeleteAPIView, EditNoticeAPIView, RetrieveNoticeCommentsView, CommentCreateAPIView
+from .views import CreateNoticeView, CommentReactionAPIView, AllNoticesView, CommentDeleteAPIView, NoticeDeleteAPIView, EditNoticeAPIView, RetrieveNoticeCommentsView, CommentCreateAPIView, CommentReactionView
 
 #add url routes here
 
@@ -20,6 +20,7 @@ urlpatterns = [
     path('comment/get', RetrieveNoticeCommentsView.as_view()),
 
     path('comment/create', CommentCreateAPIView.as_view()),
-        
+
+    path('react/',CommentReactionView.as_view(),name='react') # Enables the user to react to a comment
 ]
 
